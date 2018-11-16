@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="title">
+        <h1>Questions & Réponses</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="index-search-bar">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="form-search">
+              <span class="icon"><i class="fa fa-search"></i></span>
+              <%= form_tag(questions_path, method: :get) do %>
+                <%= text_field_tag :query, params[:query], class: 'form-control typeahead', id: "question_search", placeholder:"Recherche ta question" %>
+                <%= submit_tag 'Shine' , class: 'search-btn shake-slow'  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="filters">
+        <h3>Filtres </h3>
+          <ul class="list-inline">
+            <li>
+              <%= link_to "Top Questions", user_home_path, :class => "btn-tertiary" %>
+            </li>
+            <li>
+              <%= link_to "Proposer des réponses", user_home_path, :class => "btn-tertiary" %>
+            </li>
+            <li>
+              <%= link_to "Mes questions", my_question_path, :class => "btn-tertiary" %>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="ask-new-question">
+        <%= link_to new_question_path do %>
+          <li class="btn-big">Pose une nouvelle question</li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="results">
+      <% if @questions.blank? %>
+
+        <div class="no-answer">
+          <i class="fas fa-question-circle big-pink-icon"></i>
+          <h3>Oups, aucune question en rapport avec "<%= params[:query] %>" ne semble exister.</h3>
+          <h3>Pose ta question !</h3>
+        </div>
+
+      <% else %>
+        <% @questions.each do |question| %>
+          <%= render "questions/index_card", question: question %>
+        <% end %>
+
+        <div id="infinte-scrolling">
+          <%= paginate @questions %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

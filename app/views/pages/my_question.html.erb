@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="title">
+        <h1>Tes questions</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="results">
+      <% if @questions.blank? %>
+        <div class="no-answer">
+          <i class="fas fa-question-circle big-pink-icon"></i>
+          <h3>Tu n'as pas encore posé de question.</h3>
+          <%= link_to "Poser une question", new_question_path, class: "btn-big" %>
+        </div>
+      <% else %>
+        <% @questions.each do |question| %>
+          <%= render "questions/index_card", question: question %>
+        <% end %>
+        <%= paginate @pages %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

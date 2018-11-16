@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="question-big-box">
+        <div class="question-pic-name">
+          <%= cl_image_tag @question.user.photo, crop: :fill, class: "avatar-question-card" %>
+            <h5><%= @question.user.firstname %></h5>
+        </div>
+
+        <div class="question-msg-show">
+          <div class="question-msg-show-title-validation">
+            <div class="question-msg-show-title">
+              <h4><%= @question.title.capitalize %></h4>
+            </div>
+            <div class="validation">
+              <% if @question.useful? %>
+                <h5>SUPER QUESTION &nbsp;<i class="fas fa-rocket big-blue-icon"></i></h5>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="question-msg-show-details">
+            <p>Détails: <%= @question.body.capitalize %></p>
+          </div>
+          <div class="question-msg-show-date">
+            <p>Le <%= @question.created_at.strftime("%d/%m/%Y")%></p>
+          </div>
+          <div class="tag-and-resolue">
+            <div id='tag_cloud'>
+              <% tag_cloud @question.tag_counts, %w{s m l} do |tag| %>
+                <%= link_to tag.name, tag_path(tag.name)%>
+              <% end %>
+            </div>
+            <div class="resolue">
+              <%= render "questions/resolue", question: @question %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="answers">
+      <% @answers_sorted = @answers.sort_by {|answer| -answer.get_upvotes.size} %>
+      <% @answers_sorted.each do |answer| %>
+        <%= render "answers/show", answer: answer, top_answer: answer.top_answer %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="answer-form">
+        <%= render 'answers/form', question: @question, answer: @answer %>
+        <div id="infinte-scrolling">
+          <%= paginate @answers %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+  <#% if policy(Answer).create? %>
+    <#%= link_to "Rejoins la conversation avec ta réponse", new_question_answer_path(@question) %>
+  <#% end %> -->

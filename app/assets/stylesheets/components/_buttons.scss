@@ -1,0 +1,165 @@
+.btn-main {
+  color: $white;
+  border: 1px solid $blue-pop;;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  background: $blue-pop;;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  font-family: $buttons-font;
+  margin: 25px 0 0 0;
+  display: inline-block;
+
+  &:hover {
+  opacity: 0.6;
+  background: $blue;
+  color: $white;
+  text-decoration: none;
+  }
+}
+
+
+.btn-secondary {
+  color: $white;
+  border: 1px solid $blue;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  background: $blue;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  margin: 5px;
+  font-family: $buttons-font;
+
+  &:hover {
+  opacity: 1;
+  background: $white;
+  color: $black;
+  text-decoration: none;
+  }
+}
+
+
+.btn-tertiary {
+  color: $black;
+  border: 1px solid $blue-pop;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  background: $white;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  margin: 5px;
+  font-family: $buttons-font;
+
+  &:hover {
+  opacity: 0.2;
+  background: $blue-pop;
+  color: $white;
+  text-decoration: none;
+  }
+}
+
+.search-btn {
+  color: $white;
+  border: 1px solid $blue-pop;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  background: $blue-pop;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  margin: 5px;
+  font-family: $buttons-font;
+
+  &:hover {
+  opacity: 0.6;
+  background: $white;
+  color: $black;
+  text-decoration: none;
+
+  }
+}
+
+.btn-new {
+  color: $white;
+  border: 1px solid $blue-pop;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background: $blue-pop;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  opacity: 1;
+  font-family: $buttons-font;
+  margin: 25px 0 0 0;
+  display: inline-block;
+
+  &:hover {
+  opacity: 1;
+  background: $white;
+  color: $black;
+  text-decoration: none;
+  }
+}
+
+.btn-big {
+  color: $white;
+  border: 1px solid $blue-pop;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  background: $blue-pop;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  opacity: 1;
+  font-family: $buttons-font;
+  margin: 5px 0 0 0;
+  display: inline-block;
+
+  &:hover {
+  opacity: 1;
+  background: $white;
+  color: $black;
+  text-decoration: none;
+  }
+}
+
+
+.btn-tag {
+  color: $black;
+  border: 1px solid $pink-pop;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 1;
+  background: $white;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  list-style: none;
+  font-family: $buttons-font;
+
+  &:hover {
+  opacity: 0.6;
+  background: $white;
+  color: $black;
+  text-decoration: none;
+  }
+  width: 130px;
+  line-height: 0.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}

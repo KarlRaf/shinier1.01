@@ -1,0 +1,64 @@
+// This is where you override default Bootstrap variables
+// 1. All Bootstrap variables are here => https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+// 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
+// 3. You can override them below!
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 $light-gray;
+$font-size-base: 16px;
+$btn-font:                $buttons-font;
+$text-color:              $black;
+
+// Fonts
+$font-size-h1: floor(($font-size-base * 3)) !default; // ~48px
+$font-size-h2: floor(($font-size-base * 2.5)) !default; // ~40px
+$font-size-h3: floor(($font-size-base * 2)) !default; // ~32px
+$font-size-h4: floor(($font-size-base * 1.5)) !default; // ~24px
+$font-size-h5: floor(($font-size-base * 1)) !default; // ~16px // H5 == p
+$font-size-h6: floor(($font-size-base * 0.8)) !default; // ~13px
+
+
+// Colors
+$gray-base:       $gray;
+$brand-primary:   $blue;
+$brand-success:   $blue-pop;
+$brand-info:      $blue-purple;
+$brand-danger:    $dark-red;
+$brand-warning:   $blue-purple;
+
+// Buttons & inputs' radius
+$border-radius-base:  2px;
+$border-radius-large: 2px;
+$border-radius-small: 2px;
+
+
+// Patch to make simple_form compatible with bootstrap 3
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $blue-purple;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid,
+.was-validated .custom-select:invalid,
+.custom-select.is-invalid {
+  border-color: $blue-purple;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-tooltip,
+.form-control.is-invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-tooltip,
+.was-validated .custom-select:invalid ~ .invalid-feedback,
+.was-validated .custom-select:invalid ~ .invalid-tooltip,
+.custom-select.is-invalid ~ .invalid-feedback,
+.custom-select.is-invalid ~ .invalid-tooltip {
+  display: block;
+}
+
+// Override other variables below!
